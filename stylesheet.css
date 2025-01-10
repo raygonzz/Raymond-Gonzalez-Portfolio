@@ -1,0 +1,154 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url(Fonts/Montserrat/Montserrat-VariableFont_wght.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Jersey';
+  src: url(Fonts/Jersey_10/Jersey10-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  --background: #26262c;
+  --primary: #73f440;
+  --secondary: #a9afb5;
+  --gradient: linear-gradient(90deg, #73f440, #a9afb5);
+  --font-sans: 'Jersey';
+  --font-serif: 'Montserrat';
+  background: var(--background);
+  color: #a9afb5;
+}
+
+.header-text {
+  font-family: var(--font-sans), sans-serif; /* Include fallback font */
+  font-size: 48px;
+  font-weight: bold;
+  background: var(--primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  margin-top: 4rem;
+  margin-bottom: 0rem;
+}
+
+.header-block {
+	text-align: center;
+}
+
+/* General Reset */
+body, ul, li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar Styling */
+.navbar {
+  font-family: var(--font-sans);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background); /* Use background variable */
+  margin-top: 2rem;
+}
+
+.nav-block {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Nav Links (Horizontal) */
+.nav-links {
+  list-style: none;
+  display: flex; /* Flexbox ensures horizontal layout */
+  gap: 20px; /* Space between links */
+}
+
+.nav-links li {
+  text-transform: uppercase;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--secondary);
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary); /* Use primary variable */
+}
+
+.mast-text {
+	width: 50%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+p {
+	font-family: var(--font-serif);
+	font-size: 16px;
+	margin-top: 0.5rem;
+}
+
+/* General Styles for the Arrow */
+.arrow {
+  display: flex;
+  flex-direction: column; /* Stacks spans vertically */
+  align-items: center; /* Centers spans horizontally */
+  gap: 10px; /* Spacing between spans */
+  position: relative;
+}
+
+.arrow span {
+  display: block;
+  width: 0; /* Necessary for triangles */
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 15px solid #73f440; /* Arrow color */
+  animation: moveDown 1s infinite; /* Movement animation */
+}
+
+/* Adding Delays for Cascading Effect */
+.arrow span:nth-child(1) {
+  animation-delay: 0s;
+}
+.arrow span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.arrow span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Keyframes for Moving Down Animation */
+@keyframes moveDown {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+}
+
+
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column; /* Stack links vertically on small screens */
+    display: none; /* Hidden by default; JavaScript can toggle visibility */
+  }
+}
