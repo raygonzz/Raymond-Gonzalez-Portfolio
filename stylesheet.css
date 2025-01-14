@@ -24,7 +24,7 @@ html {
 }
 
 .header-text {
-  font-family: var(--font-sans), sans-serif; /* Include fallback font */
+  font-family: var(--font-sans), sans-serif;
   font-size: 48px;
   font-weight: bold;
   background: var(--primary);
@@ -39,20 +39,19 @@ html {
 	text-align: center;
 }
 
-/* General Reset */
+
 body, ul, li {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Navbar Styling */
 .navbar {
   font-family: var(--font-sans);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--background); /* Use background variable */
+  background-color: var(--background); 
   margin-top: 2rem;
 }
 
@@ -63,11 +62,10 @@ body, ul, li {
 }
 
 
-/* Nav Links (Horizontal) */
 .nav-links {
   list-style: none;
-  display: flex; /* Flexbox ensures horizontal layout */
-  gap: 20px; /* Space between links */
+  display: flex;
+  gap: 20px;
 }
 
 .nav-links li {
@@ -77,12 +75,12 @@ body, ul, li {
 .nav-links a {
   text-decoration: none;
   color: var(--secondary);
-  font-size: 1.5rem;
+  font-size: 2rem;
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: var(--primary); /* Use primary variable */
+  color: var(--primary);
 }
 
 .mast-text {
@@ -97,26 +95,25 @@ p {
 	margin-top: 0.5rem;
 }
 
-/* General Styles for the Arrow */
 .arrow {
   display: flex;
-  flex-direction: column; /* Stacks spans vertically */
-  align-items: center; /* Centers spans horizontally */
-  gap: 10px; /* Spacing between spans */
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
   position: relative;
+  margin-top: 4rem;
 }
 
 .arrow span {
   display: block;
-  width: 0; /* Necessary for triangles */
+  width: 0;
   height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 15px solid #73f440; /* Arrow color */
-  animation: moveDown 1s infinite; /* Movement animation */
+  border-top: 15px solid #73f440;
+  animation: moveDown 1s infinite; 
 }
 
-/* Adding Delays for Cascading Effect */
 .arrow span:nth-child(1) {
   animation-delay: 0s;
 }
@@ -127,7 +124,6 @@ p {
   animation-delay: 0.4s;
 }
 
-/* Keyframes for Moving Down Animation */
 @keyframes moveDown {
   0% {
     transform: translateY(0);
@@ -143,12 +139,77 @@ p {
   }
 }
 
+.project-covers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 20px;
+}
 
+.bergo_cover {
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+}
 
-/* Responsive Design for Smaller Screens */
+.bergo_img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  max-height: 540px;
+  border-radius: 20px;
+  display: block; 
+  transition: filter 0.6s ease, box-shadow 0.6s ease;
+  filter: grayscale(100%);
+  margin-top: 1rem; 
+}
+
+.bergo_img:hover {
+    filter: grayscale(0%);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
+.bergo_img, .bergo_cover {
+  margin-top: -7rem;
+}
+
 @media (max-width: 768px) {
   .nav-links {
-    flex-direction: column; /* Stack links vertically on small screens */
-    display: none; /* Hidden by default; JavaScript can toggle visibility */
+    flex-direction: column; 
+    display: none;
   }
+}
+
+.slides {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.slides img {
+  max-width: 100%;
+  margin: 10px 0;
+  border-radius: 20px;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
+
+.footer p {
+  font-family: var(--font-sans);
+  font-size: 2rem;
+}
+
+#first_img {
+  margin-top: 5rem;
 }
